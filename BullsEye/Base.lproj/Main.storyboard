@@ -124,15 +124,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0h-hA-alR">
+                                <rect key="frame" x="20" y="20" width="55" height="30"/>
+                                <color key="backgroundColor" red="0.27660477160000002" green="0.55091363189999998" blue="0.90382653469999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lp2-6l-3wG"/>
+                                    <constraint firstAttribute="width" constant="55" id="o3v-qs-r6J"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BkF-EX-NU5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="X0h-hA-alR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8bZ-fF-iBp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sXq-ks-75C" secondAttribute="bottom" constant="20" id="8fv-JY-0Wv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0mR-m3-1or" secondAttribute="trailing" constant="20" id="AHR-Ue-Bth"/>
                             <constraint firstItem="U9U-R7-Vjo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="EL6-XI-23o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6a8-Gv-sOA" secondAttribute="trailing" constant="20" id="Gu3-Rf-qFU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U9U-R7-Vjo" secondAttribute="trailing" constant="20" id="JzX-PC-zGm"/>
                             <constraint firstItem="sXq-ks-75C" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Oe0-5m-b5l"/>
+                            <constraint firstItem="X0h-hA-alR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="mDi-ZI-PHe"/>
                             <constraint firstItem="6a8-Gv-sOA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="nnE-7o-CWH"/>
                             <constraint firstItem="U9U-R7-Vjo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="o90-Im-elF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0mR-m3-1or" secondAttribute="bottom" constant="20" id="oo7-aZ-eEa"/>
@@ -149,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642" y="76"/>
+            <point key="canvasLocation" x="641.82908545727139" y="76"/>
         </scene>
     </scenes>
 </document>

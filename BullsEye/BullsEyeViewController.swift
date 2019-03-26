@@ -38,6 +38,10 @@ class BullsEyeViewController: UIViewController {
         }
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     //MARK: HelperFunctions
     
     func checkTarget(target: Double, result: Double) {
