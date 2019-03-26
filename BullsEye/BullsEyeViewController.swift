@@ -20,6 +20,7 @@ class BullsEyeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         generateRandomNumber()
         targetLabel.text = String(format: "Your target is: %.2f", randomNumber)
     }
@@ -27,6 +28,14 @@ class BullsEyeViewController: UIViewController {
     //MARK: IBActions
     @IBAction func readyButtonPressed(_ sender: Any) {
         checkTarget(target: randomNumber, result: Double(sliderOutlet.value))
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        if isCheaterModeOn != nil {
+            if isCheaterModeOn == true {
+                resultLabel.text = String(format: "%.2f", sender.value)
+            }
+        }
     }
     
     //MARK: HelperFunctions
@@ -61,7 +70,6 @@ class BullsEyeViewController: UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let okButton = UIAlertAction(title: "OK", style: .default) { (action) in
-            self.dismiss(animated: true, completion: nil)
             self.updateUI()
         }
         

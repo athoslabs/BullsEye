@@ -96,6 +96,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="U9U-R7-Vjo">
                                 <rect key="frame" x="18" y="172.5" width="631" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="79d-Lp-QCR"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXq-ks-75C">
                                 <rect key="frame" x="270.5" y="325" width="126" height="30"/>
@@ -111,7 +114,7 @@
                                     <action selector="readyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ry-uN-zmx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-m3-1or">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mR-m3-1or">
                                 <rect key="frame" x="554" y="332" width="93" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="INk-DH-IuF"/>
