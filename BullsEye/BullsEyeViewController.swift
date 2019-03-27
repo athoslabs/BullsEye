@@ -17,6 +17,7 @@ class BullsEyeViewController: UIViewController {
     
     var randomNumber = 0.0
     var isCheaterModeOn : Bool?
+    var highestScore : Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +47,13 @@ class BullsEyeViewController: UIViewController {
     
     func checkTarget(target: Double, result: Double) {
         
-        let startingPoint = target - 2.0
-        let endPoint = target + 2.0
+        let startingPoint = target - 4.0
+        let endPoint = target + 4.0
         
         if (result >= startingPoint) && (result <= endPoint) {
+            
+            getCurrentHighScore(target: target, result: result)
+            
             showResult(title: "Bull's EYE!!!", message: String(format: "You hit %.2f", sliderOutlet.value))
         } else {
             showResult(title: "Looser!!!", message: String(format: "You hit %.2f", sliderOutlet.value))
@@ -80,6 +84,29 @@ class BullsEyeViewController: UIViewController {
         alertController.addAction(okButton)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func getCurrentHighScore(target: Double, result: Double) {
+        var currentScore : Double!
+        
+        if target < result {
+            currentScore = result - target
+        } else {
+            currentScore = target - result
+        }
+        
+        compareHighScore(currentScore: currentScore)
+    }
+    
+    func compareHighScore(currentScore: Double) {
+        
+        if highestScore != nil {
+            if highestScore! > currentScore {
+                highestScore = currentScore
+            }
+        } else {
+            highestScore = currentScore
+        }
     }
     
 }
