@@ -63,7 +63,6 @@ class BullsEyeViewController: UIViewController {
     
     func generateRandomNumber() {
         randomNumber = Double.random(in: 0...100)
-        print("Random Number: \(randomNumber)")
     }
 
     func updateUI() {
@@ -104,6 +103,9 @@ class BullsEyeViewController: UIViewController {
             if highestScore! > currentScore {
                 highestScore = currentScore
                 showResult(title: "New Record!", message: String(format: "Your new record is: %.2f", highestScore!))
+                
+                UserDefaults.standard.set(highestScore!, forKey: "myHighestScore")
+                UserDefaults.standard.synchronize()
             }
         } else {
             highestScore = currentScore

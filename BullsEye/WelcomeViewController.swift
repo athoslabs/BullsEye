@@ -10,7 +10,10 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var showHighScoreButtonOutlet: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     var isCheaterModeOn = false
+    var isShowingHighScore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,21 @@ class WelcomeViewController: UIViewController {
     @IBAction func cheaterSwitchValueUpdated(_ sender: UISwitch) {
         print(sender.isOn)
         isCheaterModeOn = sender.isOn
-        print("Is Cheater Mode On? \(isCheaterModeOn)")
+    }
+    
+    @IBAction func showHighScore(_ sender: Any) {
+        
+        isShowingHighScore = !isShowingHighScore
+        if isShowingHighScore {
+            showHighScoreButtonOutlet.setTitle("Hide High Score", for: .normal)
+            let userDefaultScore = UserDefaults.standard.double(forKey: "myHighestScore")
+            scoreLabel.text = String(format: "Score: %.2f", userDefaultScore)
+        } else {
+            showHighScoreButtonOutlet.setTitle("Show Highest Score", for: .normal)
+            scoreLabel.text = ""
+        }
+        
+    
     }
     
     //MARK: Navigation
