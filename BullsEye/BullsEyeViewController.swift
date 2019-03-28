@@ -103,6 +103,7 @@ class BullsEyeViewController: UIViewController {
         if highestScore != nil {
             if highestScore! > currentScore {
                 highestScore = currentScore
+                showResult(title: "New Record!", message: String(format: "Your new record is: %.2f", highestScore!))
             }
         } else {
             highestScore = currentScore
